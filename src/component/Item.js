@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Item = () => {
+const Item = (props) => {
     return (
         <li>
             <input type='checkbox' />
-            <span>サンプルテキスト</span>
+            <span>{props.content}</span>
         </li>
     )
 }
