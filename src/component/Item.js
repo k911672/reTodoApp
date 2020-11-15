@@ -1,10 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Item = (props) => {
+const Item = ({content}) => {
+    const [isDone, setIsDone] = useState(false);
+
     return (
         <li>
-            <input type='checkbox' />
-            <span>{props.content}</span>
+            <input type='checkbox' onChange={() =>{
+                setIsDone(!isDone)
+            }}/>
+            <span style={
+                {textDecoration: isDone ? 'line-through' : 'none'}
+            }>{content}</span>
         </li>
     )
 }
